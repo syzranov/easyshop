@@ -1,0 +1,56 @@
+spring:
+  main:
+    lazy-initialization: true
+  cloud:
+    discovery:
+      client:
+        composite-indicator:
+          enabled: false
+  application:
+    version: "${ENV}-1.0.0"
+    name: easyshop
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+  liquibase:
+    change-log: "classpath:db/changelog/db.changelog-master.yaml"
+    user: ${DB_USERNAME}
+    url: ${DB_URL}
+    enabled: true
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+#  autoconfigure:
+#    exclude:
+#      - org.springframework.cloud.sleuth.instrument.quartz.TraceQuartzAutoConfiguration
+
+  servlet:
+    multipart:
+      max-request-size: 30MB
+      max-file-size: 30MB
+  banner:
+    location: classpath:banner.txt
+
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+  max-http-header-size: 4096000
+
+logging:
+  level:
+    ROOT: INFO
+    ru:
+      easyshop: ${LOG_LEVEL}
+    org:
+      springframework:
+        web: INFO
+  config: ${LOGGING_CONFIG}
+
+springdoc:
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
