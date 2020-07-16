@@ -1,4 +1,4 @@
-package ru.easyshop.config.localization;
+package ru.easyshop.config;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.DeserializationFeature;

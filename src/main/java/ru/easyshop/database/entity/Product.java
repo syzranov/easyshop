@@ -4,9 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import ru.easyshop.database.entity.base.BaseObjectIdNameDescription;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Getter
 @Setter
@@ -20,7 +18,7 @@ public class Product extends BaseObjectIdNameDescription {
     @Column(name = "short_description")
     private String shortDescription;
 
-//    @ManyToOne(fetch = FetchType.LAZY)
-//    @JoinColumn(name = "property_id")
-//    private Property property;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "property_id")
+    private Property property;
 }
