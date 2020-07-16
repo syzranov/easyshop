@@ -7,9 +7,9 @@
 ╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝       ╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═╝
 </pre>
 Simple shop engine<br/> 
-By Andrey Syzranov 2020 <br/> 
-syzranov@gmail.com
-
+By Andrey Syzranov 2020<br/> 
+syzranov@gmail.com<br/> 
+http://easyshop.technology/
 
 Links:
 <ul>
