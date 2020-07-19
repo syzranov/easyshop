@@ -13,15 +13,21 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>Easy shop</name>
     <description>Easy shop</description>
-
+    <packaging>war</packaging>
     <properties>
         <java.version>11</java.version>
         <logstash.version>6.2</logstash.version>
         <logback-classic.version>1.2.3</logback-classic.version>
         <testcontainers.version>1.12.4</testcontainers.version>
         <spring.profiles.active>local,no-liquibase</spring.profiles.active>
+        <start-class>ru.easyshop.EasyshopApplication</start-class>
       </properties>
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
