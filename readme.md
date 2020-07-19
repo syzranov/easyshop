@@ -9,7 +9,8 @@
 Simple shop engine<br/> 
 By Andrey Syzranov 2020<br/> 
 syzranov@gmail.com<br/> 
-http://easyshop.technology/
+http://easyshop.technology/<br/>
+db schema: dbdiagram.io<br/>
 
 Links:
 <ul>
