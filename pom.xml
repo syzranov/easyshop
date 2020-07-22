@@ -12,7 +12,9 @@
     <artifactId>easyshop</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Easy shop</name>
-    <description>Easy shop</description>
+    <description>EASYSHOP is a single system for creating an online store. Manage not only your store, but also your
+        business.
+    </description>
     <packaging>war</packaging>
     <properties>
         <java.version>11</java.version>
@@ -21,7 +23,19 @@
         <testcontainers.version>1.12.4</testcontainers.version>
         <spring.profiles.active>local,no-liquibase</spring.profiles.active>
         <start-class>ru.easyshop.EasyshopApplication</start-class>
-      </properties>
+        <sonar.projectKey>syzranov_easyshop</sonar.projectKey>
+        <sonar.organization>syzranov</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.login>610f717527b7d62e4841787c9603bdfd8248fb09</sonar.login>
+    </properties>
+    <profiles>
+        <profile>
+            <id>coverage</id>
+            <activation>
+                <activeByDefault>false</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -145,6 +159,7 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.2.4.RELEASE</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -154,7 +169,47 @@
                     <target>10</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <argLine>@{argLine}</argLine>
+                </configuration>
+                <version>2.22.2</version>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.5</version>
+                <executions>
+                    <execution>
+                        <id>prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report-aggregate</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>report-aggregate</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>after-unit-test-execution</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
-
 </project>
