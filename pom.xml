@@ -15,13 +15,14 @@
     <description>EASYSHOP is a single system for creating an online store. Manage not only your store, but also your
         business.
     </description>
-
+    <packaging>war</packaging>
     <properties>
         <java.version>11</java.version>
         <logstash.version>6.2</logstash.version>
         <logback-classic.version>1.2.3</logback-classic.version>
         <testcontainers.version>1.12.4</testcontainers.version>
         <spring.profiles.active>local,no-liquibase</spring.profiles.active>
+        <start-class>ru.easyshop.EasyshopApplication</start-class>
         <sonar.projectKey>syzranov_easyshop</sonar.projectKey>
         <sonar.organization>syzranov</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
@@ -36,6 +37,11 @@
         </profile>
     </profiles>
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
