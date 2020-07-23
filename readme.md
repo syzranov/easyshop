@@ -36,6 +36,4 @@ Links:
             </p> 
         </li>
     <li>
-
-    </li>
 </ul>
