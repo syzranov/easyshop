@@ -16,6 +16,6 @@ public class LandingServiceImpl implements LandingService {
 
     @Override
     public LandingDto getLandingData(LandingRequest request) {
-        return LandingDto.builder().build();
+        return landingRepository.findLandingData(request);
     }
 }
