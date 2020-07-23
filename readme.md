@@ -35,5 +35,4 @@ Links:
                 and look at here: <b>target/site/jacoco/index.html</b>
             </p> 
         </li>
-    <li>
 </ul>
