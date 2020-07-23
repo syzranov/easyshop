@@ -31,7 +31,7 @@ Links:
     </li>
         <li>
             <p>Unit test code coverage local by jacoco:</p>
-            <p>In order get coverage localy run: <b>mvn clean verify -s -Dcoverage sonar:sonar</b> <br/>
+            <p>In order get coverage localy run: <b>mvn clean verify -s settings.xml -Dcoverage sonar:sonar</b> <br/>
                 and look at here: <b>target/site/jacoco/index.html</b>
             </p> 
         </li>
